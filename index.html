@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Embroidery Job Card</title>
@@ -66,7 +67,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      background: #000000;      
+      background: #000000;
       border-bottom: 1px solid #e5e7eb;
       padding: 14px 18px;
     }
@@ -262,6 +263,7 @@
     }
 
     @media (max-width: 1180px) {
+
       .machine-row,
       .finish-row {
         grid-template-columns: repeat(2, 1fr);
@@ -317,348 +319,352 @@
 
 <body>
 
-<div class="container">
-  <div class="form-card">
-    <div class="form-header">
-      <h1>Embroidery Job Card</h1>
-      <p>Machine production, finishing stages and packing details</p>
-    </div>
-
-    <form id="jobForm">
-
-      <div class="section">
-        <div class="section-title">
-          <h2>Order Information</h2>
-        </div>
-
-        <div class="section-body">
-          <div class="grid">
-            <div class="form-group">
-              <label>Order Number</label>
-              <input type="text" id="order_number" required>
-            </div>
-
-            <div class="form-group">
-              <label>Date</label>
-              <input type="date" id="date" required>
-            </div>
-
-            <div class="form-group">
-              <label>Emp ID</label>
-              <input type="text" id="emp_id">
-            </div>
-
-            <div class="form-group">
-              <label>Emp Name</label>
-              <input type="text" id="emp_name">
-            </div>
-
-            <div class="form-group">
-              <label>Machine No</label>
-              <input type="text" id="machine_no">
-            </div>
-
-            <div class="form-group">
-              <label>Supervisor Name</label>
-              <input type="text" id="supervisor_name">
-            </div>
-          </div>
-        </div>
+  <div class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <h1>Embroidery Job Card</h1>
+        <p>Machine production, finishing stages and packing details</p>
       </div>
 
-      <div class="section">
-        <div class="section-title">
-          <h2>Store In / Out Time</h2>
-        </div>
+      <form id="jobForm">
 
-        <div class="section-body">
-          <div class="grid-2">
-            <div class="form-group">
-              <label>Store In Time</label>
-              <input type="time" id="store_in_time">
-            </div>
-
-            <div class="form-group">
-              <label>Store Out Time</label>
-              <input type="time" id="store_out_time">
-            </div>
+        <div class="section">
+          <div class="section-title">
+            <h2>Order Information</h2>
           </div>
-        </div>
-      </div>
 
-      <div class="section">
-        <div class="section-title">
-          <h2>Machine Setup</h2>
-        </div>
-
-        <div class="section-body">
-          <div class="grid-2">
-            <div class="form-group">
-              <label>Machine Setup Start Time</label>
-              <input type="time" id="machine_setup_start">
-            </div>
-
-            <div class="form-group">
-              <label>Machine Setup End Time</label>
-              <input type="time" id="machine_setup_end">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">
-          <h2>Edit Times</h2>
-        </div>
-
-        <div class="section-body">
-          <div class="grid">
-            <div class="form-group">
-              <label>Edit Time 1 Start</label>
-              <input type="time" id="edit1_start">
-            </div>
-
-            <div class="form-group">
-              <label>Edit Time 1 End</label>
-              <input type="time" id="edit1_end">
-            </div>
-
-            <div class="form-group">
-              <label>Edit Time 2 Start</label>
-              <input type="time" id="edit2_start">
-            </div>
-
-            <div class="form-group">
-              <label>Edit Time 2 End</label>
-              <input type="time" id="edit2_end">
-            </div>
-
-            <div class="form-group">
-              <label>Edit Time 3 Start</label>
-              <input type="time" id="edit3_start">
-            </div>
-
-            <div class="form-group">
-              <label>Edit Time 3 End</label>
-              <input type="time" id="edit3_end">
-            </div>
-
-            <div class="form-group">
-              <label>Edit Time 4 Start</label>
-              <input type="time" id="edit4_start">
-            </div>
-
-            <div class="form-group">
-              <label>Edit Time 4 End</label>
-              <input type="time" id="edit4_end">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">
-          <h2>Machine Production</h2>
-        </div>
-
-        <div class="section-body">
-          <div id="machineRows" class="rows-area">
-
-            <div class="machine-row">
+          <div class="section-body">
+            <div class="grid">
               <div class="form-group">
-                <label>Shift</label>
-                <select class="shift">
-                  <option value="">Select Shift</option>
-                  <option value="Day">Day</option>
-                  <option value="Night">Night</option>
-                </select>
+                <label>Order Number</label>
+                <input type="text" id="order_number" required>
               </div>
 
               <div class="form-group">
-                <label>Shift Start</label>
-                <input type="time" class="shift_start_time">
+                <label>Date</label>
+                <input type="date" id="date" required>
               </div>
 
               <div class="form-group">
-                <label>Shift End</label>
-                <input type="time" class="shift_end_time">
+                <label>Emp ID</label>
+                <input type="text" id="emp_id">
               </div>
 
               <div class="form-group">
-                <label>Per Shift Pcs</label>
-                <div class="pcs-box">
-                  <input type="number" class="per_shift_good_pcs" min="0" placeholder="Good" oninput="calculateMachineRow(this)">
-                  <div class="slash">/</div>
-                  <input type="number" class="per_shift_rejected_pcs" min="0" placeholder="Rejected" oninput="calculateMachineRow(this)">
+                <label>Emp Name</label>
+                <input type="text" id="emp_name">
+              </div>
+
+              <div class="form-group">
+                <label>Machine No</label>
+                <input type="text" id="machine_no">
+              </div>
+
+              <div class="form-group">
+                <label>Supervisor Name</label>
+                <input type="text" id="supervisor_name">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <h2>Store In / Out Time</h2>
+          </div>
+
+          <div class="section-body">
+            <div class="grid-2">
+              <div class="form-group">
+                <label>Store In Time</label>
+                <input type="time" id="store_in_time">
+              </div>
+
+              <div class="form-group">
+                <label>Store Out Time</label>
+                <input type="time" id="store_out_time">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <h2>Machine Setup</h2>
+          </div>
+
+          <div class="section-body">
+            <div class="grid-2">
+              <div class="form-group">
+                <label>Machine Setup Start Time</label>
+                <input type="time" id="machine_setup_start">
+              </div>
+
+              <div class="form-group">
+                <label>Machine Setup End Time</label>
+                <input type="time" id="machine_setup_end">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <h2>Edit Times</h2>
+          </div>
+
+          <div class="section-body">
+            <div class="grid">
+              <div class="form-group">
+                <label>Edit Time 1 Start</label>
+                <input type="time" id="edit1_start">
+              </div>
+
+              <div class="form-group">
+                <label>Edit Time 1 End</label>
+                <input type="time" id="edit1_end">
+              </div>
+
+              <div class="form-group">
+                <label>Edit Time 2 Start</label>
+                <input type="time" id="edit2_start">
+              </div>
+
+              <div class="form-group">
+                <label>Edit Time 2 End</label>
+                <input type="time" id="edit2_end">
+              </div>
+
+              <div class="form-group">
+                <label>Edit Time 3 Start</label>
+                <input type="time" id="edit3_start">
+              </div>
+
+              <div class="form-group">
+                <label>Edit Time 3 End</label>
+                <input type="time" id="edit3_end">
+              </div>
+
+              <div class="form-group">
+                <label>Edit Time 4 Start</label>
+                <input type="time" id="edit4_start">
+              </div>
+
+              <div class="form-group">
+                <label>Edit Time 4 End</label>
+                <input type="time" id="edit4_end">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <h2>Machine Production</h2>
+          </div>
+
+          <div class="section-body">
+            <div id="machineRows" class="rows-area">
+
+              <div class="machine-row">
+                <div class="form-group">
+                  <label>Shift</label>
+                  <select class="shift">
+                    <option value="">Select Shift</option>
+                    <option value="Day">Day</option>
+                    <option value="Night">Night</option>
+                  </select>
                 </div>
-                <div class="hint">Left: Good / Right: Rejected</div>
+
+                <div class="form-group">
+                  <label>Shift Start</label>
+                  <input type="time" class="shift_start_time">
+                </div>
+
+                <div class="form-group">
+                  <label>Shift End</label>
+                  <input type="time" class="shift_end_time">
+                </div>
+
+                <div class="form-group">
+                  <label>Per Shift Pcs</label>
+                  <div class="pcs-box">
+                    <input type="number" class="per_shift_good_pcs" min="0" placeholder="Good"
+                      oninput="calculateMachineRow(this)">
+                    <div class="slash">/</div>
+                    <input type="number" class="per_shift_rejected_pcs" min="0" placeholder="Rejected"
+                      oninput="calculateMachineRow(this)">
+                  </div>
+                  <div class="hint">Left: Good / Right: Rejected</div>
+                </div>
+
+                <div class="form-group">
+                  <label>Good Pcs</label>
+                  <input type="number" class="good_pcs_machine" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label>Rejected Pcs</label>
+                  <input type="number" class="rejected_pcs_machine" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label>Total Qty</label>
+                  <input type="number" class="total_qty_made" readonly>
+                </div>
+
+                <div class="row-action">
+                  <button type="button" class="icon-btn add-btn" onclick="addMachineRow()">+</button>
+                </div>
               </div>
 
-              <div class="form-group">
-                <label>Good Pcs</label>
-                <input type="number" class="good_pcs_machine" readonly>
-              </div>
-
-              <div class="form-group">
-                <label>Rejected Pcs</label>
-                <input type="number" class="rejected_pcs_machine" readonly>
-              </div>
-
-              <div class="form-group">
-                <label>Total Qty</label>
-                <input type="number" class="total_qty_made" readonly>
-              </div>
-
-              <div class="row-action">
-                <button type="button" class="icon-btn add-btn" onclick="addMachineRow()">+</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">
-          <h2>Finishing Department</h2>
-        </div>
-
-        <div class="section-body">
-          <div class="grid">
-            <div class="form-group">
-              <label>Received Qty</label>
-              <input type="number" id="received_qty" min="0">
-            </div>
-
-            <div class="form-group">
-              <label>Received Date</label>
-              <input type="date" id="received_date">
-            </div>
-
-            <div class="form-group">
-              <label>Received Time</label>
-              <input type="time" id="received_time">
-            </div>
-          </div>
-
-          <br>
-
-          <div id="finishingRows" class="rows-area">
-            <div class="finish-row">
-              <div class="form-group">
-                <label>Finish Emp ID</label>
-                <input type="text" class="finish_emp_id">
-              </div>
-
-              <div class="form-group">
-                <label>Stage Name</label>
-                <select class="stage_name">
-                  <option value="" selected hidden>Select Stage</option>
-                  <option value="Sheet Cutting">Sheet Cutting</option>
-                  <option value="Iron On">Iron On</option>
-                  <option value="Iron Cutting">Iron Cutting</option>
-                  <option value="See On Cutting">See On Cutting</option>
-                  <option value="Velcro">Velcro</option>
-                  <option value="Merrow">Merrow</option>
-                  <option value="Elfy">Elfy</option>
-                  <option value="Patch Finish">Patch Finish</option>
-                  <option value="Packing">Packing</option>
-                  <option value="QC">QC</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>Start Time</label>
-                <input type="time" class="finish_start_time">
-              </div>
-
-              <div class="form-group">
-                <label>End Time</label>
-                <input type="time" class="finish_end_time">
-              </div>
-
-              <div class="form-group">
-                <label>Good Pcs</label>
-                <input type="number" class="finish_good_pcs" min="0">
-              </div>
-
-              <div class="form-group">
-                <label>Rejected Pcs</label>
-                <input type="number" class="finish_rejected_pcs" min="0">
-              </div>
-
-              <div class="row-action">
-                <button type="button" class="icon-btn add-btn" onclick="addFinishRow()">+</button>
-              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="section">
-        <div class="section-title">
-          <h2>Packing Details</h2>
-        </div>
+        <div class="section">
+          <div class="section-title">
+            <h2>Finishing Department</h2>
+          </div>
 
-        <div class="section-body">
-          <div class="grid">
-            <div class="form-group">
-              <label>PolyBag Size</label>
-              <input type="text" id="polybag_size">
+          <div class="section-body">
+            <div class="grid">
+              <div class="form-group">
+                <label>Received Qty</label>
+                <input type="number" id="received_qty" min="0">
+              </div>
+
+              <div class="form-group">
+                <label>Received Date</label>
+                <input type="date" id="received_date">
+              </div>
+
+              <div class="form-group">
+                <label>Received Time</label>
+                <input type="time" id="received_time">
+              </div>
             </div>
 
-            <div class="form-group">
-              <label>PolyBag Qty</label>
-              <input type="number" id="polybag_qty" min="0">
-            </div>
+            <br>
 
-            <div class="form-group">
-              <label>Send Qty</label>
-              <input type="number" id="send_qty" min="0">
+            <div id="finishingRows" class="rows-area">
+              <div class="finish-row">
+                <div class="form-group">
+                  <label>Finish Emp ID</label>
+                  <input type="text" class="finish_emp_id">
+                </div>
+
+                <div class="form-group">
+                  <label>Stage Name</label>
+                  <select class="stage_name">
+                    <option value="" selected hidden>Select Stage</option>
+                    <option value="Sheet Cutting">Sheet Cutting</option>
+                    <option value="Iron On">Iron On</option>
+                    <option value="Iron On">Iron On Backing</option>
+                    <option value="Iron On">Velcro Cutting</option>
+                    <option value="See On Cutting">See On Cutting</option>
+                    <option value="Iron Cutting">Iron Cutting</option>
+                    <option value="Velcro">Velcro</option>
+                    <option value="Merrow">Merrow</option>
+                    <option value="Elfy">Elfy</option>
+                    <option value="Patch Finish">QC Finishing</option>
+                    <option value="Packing">Packing</option>
+                    <option value="QC">QC Final</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Start Time</label>
+                  <input type="time" class="finish_start_time">
+                </div>
+
+                <div class="form-group">
+                  <label>End Time</label>
+                  <input type="time" class="finish_end_time">
+                </div>
+
+                <div class="form-group">
+                  <label>Good Pcs</label>
+                  <input type="number" class="finish_good_pcs" min="0">
+                </div>
+
+                <div class="form-group">
+                  <label>Rejected Pcs</label>
+                  <input type="number" class="finish_rejected_pcs" min="0">
+                </div>
+
+                <div class="row-action">
+                  <button type="button" class="icon-btn add-btn" onclick="addFinishRow()">+</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="submit-area">
-        <button type="submit" id="submitBtn" class="submit-btn">Save Record</button>
-      </div>
+        <div class="section">
+          <div class="section-title">
+            <h2>Packing Details</h2>
+          </div>
 
-      <div id="message" class="msg"></div>
+          <div class="section-body">
+            <div class="grid">
+              <div class="form-group">
+                <label>PolyBag Size</label>
+                <input type="text" id="polybag_size">
+              </div>
 
-    </form>
+              <div class="form-group">
+                <label>PolyBag Qty</label>
+                <input type="number" id="polybag_qty" min="0">
+              </div>
+
+              <div class="form-group">
+                <label>Send Qty</label>
+                <input type="number" id="send_qty" min="0">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" id="submitBtn" class="submit-btn">Save Record</button>
+        </div>
+
+        <div id="message" class="msg"></div>
+
+      </form>
+    </div>
   </div>
-</div>
 
-<script>
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxLr8OqaqdHxgsvIam-r6K9BCB38MDUSajn1qWAGQv_1k4owv526NLiBUbCh2P8j1JQRg/exec";
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxLr8OqaqdHxgsvIam-r6K9BCB38MDUSajn1qWAGQv_1k4owv526NLiBUbCh2P8j1JQRg/exec";
 
-  const form = document.getElementById("jobForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const messageBox = document.getElementById("message");
+    const form = document.getElementById("jobForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const messageBox = document.getElementById("message");
 
-  function getValue(id) {
-    return document.getElementById(id).value.trim();
-  }
+    function getValue(id) {
+      return document.getElementById(id).value.trim();
+    }
 
-  function calculateMachineRow(input) {
-    const row = input.closest(".machine-row");
+    function calculateMachineRow(input) {
+      const row = input.closest(".machine-row");
 
-    const good = Number(row.querySelector(".per_shift_good_pcs").value) || 0;
-    const rejected = Number(row.querySelector(".per_shift_rejected_pcs").value) || 0;
+      const good = Number(row.querySelector(".per_shift_good_pcs").value) || 0;
+      const rejected = Number(row.querySelector(".per_shift_rejected_pcs").value) || 0;
 
-    row.querySelector(".good_pcs_machine").value = good;
-    row.querySelector(".rejected_pcs_machine").value = rejected;
-    row.querySelector(".total_qty_made").value = good + rejected;
-  }
+      row.querySelector(".good_pcs_machine").value = good;
+      row.querySelector(".rejected_pcs_machine").value = rejected;
+      row.querySelector(".total_qty_made").value = good + rejected;
+    }
 
-  function addMachineRow() {
-    const wrapper = document.getElementById("machineRows");
+    function addMachineRow() {
+      const wrapper = document.getElementById("machineRows");
 
-    const row = document.createElement("div");
-    row.className = "machine-row";
+      const row = document.createElement("div");
+      row.className = "machine-row";
 
-    row.innerHTML = `
+      row.innerHTML = `
       <div class="form-group">
         <label>Shift</label>
         <select class="shift">
@@ -708,63 +714,63 @@
       </div>
     `;
 
-    wrapper.appendChild(row);
-  }
+      wrapper.appendChild(row);
+    }
 
-  function removeMachineRow(button) {
-    button.closest(".machine-row").remove();
-  }
+    function removeMachineRow(button) {
+      button.closest(".machine-row").remove();
+    }
 
-  function collectMachineRows() {
-    const rows = document.querySelectorAll(".machine-row");
-    const data = [];
+    function collectMachineRows() {
+      const rows = document.querySelectorAll(".machine-row");
+      const data = [];
 
-    rows.forEach(row => {
-      calculateMachineRow(row.querySelector(".per_shift_good_pcs"));
+      rows.forEach(row => {
+        calculateMachineRow(row.querySelector(".per_shift_good_pcs"));
 
-      const shift = row.querySelector(".shift").value.trim();
-      const shift_start_time = row.querySelector(".shift_start_time").value.trim();
-      const shift_end_time = row.querySelector(".shift_end_time").value.trim();
-      const per_shift_good_pcs = row.querySelector(".per_shift_good_pcs").value.trim();
-      const per_shift_rejected_pcs = row.querySelector(".per_shift_rejected_pcs").value.trim();
-      const good_pcs_machine = row.querySelector(".good_pcs_machine").value.trim();
-      const rejected_pcs_machine = row.querySelector(".rejected_pcs_machine").value.trim();
-      const total_qty_made = row.querySelector(".total_qty_made").value.trim();
+        const shift = row.querySelector(".shift").value.trim();
+        const shift_start_time = row.querySelector(".shift_start_time").value.trim();
+        const shift_end_time = row.querySelector(".shift_end_time").value.trim();
+        const per_shift_good_pcs = row.querySelector(".per_shift_good_pcs").value.trim();
+        const per_shift_rejected_pcs = row.querySelector(".per_shift_rejected_pcs").value.trim();
+        const good_pcs_machine = row.querySelector(".good_pcs_machine").value.trim();
+        const rejected_pcs_machine = row.querySelector(".rejected_pcs_machine").value.trim();
+        const total_qty_made = row.querySelector(".total_qty_made").value.trim();
 
-      const hasData =
-        shift ||
-        shift_start_time ||
-        shift_end_time ||
-        per_shift_good_pcs ||
-        per_shift_rejected_pcs ||
-        good_pcs_machine ||
-        rejected_pcs_machine ||
-        total_qty_made;
+        const hasData =
+          shift ||
+          shift_start_time ||
+          shift_end_time ||
+          per_shift_good_pcs ||
+          per_shift_rejected_pcs ||
+          good_pcs_machine ||
+          rejected_pcs_machine ||
+          total_qty_made;
 
-      if (hasData) {
-        data.push({
-          shift,
-          shift_start_time,
-          shift_end_time,
-          per_shift_good_pcs,
-          per_shift_rejected_pcs,
-          good_pcs_machine,
-          rejected_pcs_machine,
-          total_qty_made
-        });
-      }
-    });
+        if (hasData) {
+          data.push({
+            shift,
+            shift_start_time,
+            shift_end_time,
+            per_shift_good_pcs,
+            per_shift_rejected_pcs,
+            good_pcs_machine,
+            rejected_pcs_machine,
+            total_qty_made
+          });
+        }
+      });
 
-    return data;
-  }
+      return data;
+    }
 
-  function addFinishRow() {
-    const wrapper = document.getElementById("finishingRows");
+    function addFinishRow() {
+      const wrapper = document.getElementById("finishingRows");
 
-    const row = document.createElement("div");
-    row.className = "finish-row";
+      const row = document.createElement("div");
+      row.className = "finish-row";
 
-    row.innerHTML = `
+      row.innerHTML = `
       <div class="form-group">
         <label>Finish Emp ID</label>
         <input type="text" class="finish_emp_id">
@@ -774,16 +780,18 @@
         <label>Stage Name</label>
         <select class="stage_name">
           <option value="">Select Stage</option>
-          <option value="Iron On">Iron On</option>
-          <option value="Elfy">Elfy</option>
-          <option value="Merrow">Merrow</option>
-          <option value="Iron Cutting">Iron Cutting</option>
           <option value="Sheet Cutting">Sheet Cutting</option>
-          <option value="See On Cutting">See On Cutting</option>
-          <option value="Velcro">Velcro</option>
-          <option value="QC">QC</option>
-          <option value="Patch Finish">Patch Finish</option>
-          <option value="Packing">Packing</option>
+                  <option value="Iron On">Iron On</option>
+                  <option value="Iron On">Iron On Backing</option>
+                  <option value="Iron On">Velcro Cutting</option>
+                  <option value="See On Cutting">See On Cutting</option>
+                  <option value="Iron Cutting">Iron Cutting</option>
+                  <option value="Velcro">Velcro</option>
+                  <option value="Merrow">Merrow</option>
+                  <option value="Elfy">Elfy</option>
+                  <option value="Patch Finish">QC Finishing</option>
+                  <option value="Packing">Packing</option>
+                  <option value="QC">QC Final</option>
         </select>
       </div>
 
@@ -812,125 +820,125 @@
       </div>
     `;
 
-    wrapper.appendChild(row);
-  }
+      wrapper.appendChild(row);
+    }
 
-  function removeFinishRow(button) {
-    button.closest(".finish-row").remove();
-  }
+    function removeFinishRow(button) {
+      button.closest(".finish-row").remove();
+    }
 
-  function collectFinishingRows() {
-    const rows = document.querySelectorAll(".finish-row");
-    const data = [];
+    function collectFinishingRows() {
+      const rows = document.querySelectorAll(".finish-row");
+      const data = [];
 
-    rows.forEach(row => {
-      const finish_emp_id = row.querySelector(".finish_emp_id").value.trim();
-      const stage_name = row.querySelector(".stage_name").value.trim();
-      const finish_start_time = row.querySelector(".finish_start_time").value.trim();
-      const finish_end_time = row.querySelector(".finish_end_time").value.trim();
-      const finish_good_pcs = row.querySelector(".finish_good_pcs").value.trim();
-      const finish_rejected_pcs = row.querySelector(".finish_rejected_pcs").value.trim();
+      rows.forEach(row => {
+        const finish_emp_id = row.querySelector(".finish_emp_id").value.trim();
+        const stage_name = row.querySelector(".stage_name").value.trim();
+        const finish_start_time = row.querySelector(".finish_start_time").value.trim();
+        const finish_end_time = row.querySelector(".finish_end_time").value.trim();
+        const finish_good_pcs = row.querySelector(".finish_good_pcs").value.trim();
+        const finish_rejected_pcs = row.querySelector(".finish_rejected_pcs").value.trim();
 
-      const hasData =
-        finish_emp_id ||
-        stage_name ||
-        finish_start_time ||
-        finish_end_time ||
-        finish_good_pcs ||
-        finish_rejected_pcs;
+        const hasData =
+          finish_emp_id ||
+          stage_name ||
+          finish_start_time ||
+          finish_end_time ||
+          finish_good_pcs ||
+          finish_rejected_pcs;
 
-      if (hasData) {
-        data.push({
-          finish_emp_id,
-          stage_name,
-          finish_start_time,
-          finish_end_time,
-          finish_good_pcs,
-          finish_rejected_pcs
+        if (hasData) {
+          data.push({
+            finish_emp_id,
+            stage_name,
+            finish_start_time,
+            finish_end_time,
+            finish_good_pcs,
+            finish_rejected_pcs
+          });
+        }
+      });
+
+      return data;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Saving...";
+
+      messageBox.style.display = "none";
+      messageBox.className = "msg";
+
+      const payload = {
+        order_number: getValue("order_number"),
+        date: getValue("date"),
+        emp_id: getValue("emp_id"),
+        emp_name: getValue("emp_name"),
+        machine_no: getValue("machine_no"),
+        supervisor_name: getValue("supervisor_name"),
+
+        store_in_time: getValue("store_in_time"),
+        store_out_time: getValue("store_out_time"),
+
+        machine_setup_start: getValue("machine_setup_start"),
+        machine_setup_end: getValue("machine_setup_end"),
+
+        edit1_start: getValue("edit1_start"),
+        edit1_end: getValue("edit1_end"),
+        edit2_start: getValue("edit2_start"),
+        edit2_end: getValue("edit2_end"),
+        edit3_start: getValue("edit3_start"),
+        edit3_end: getValue("edit3_end"),
+        edit4_start: getValue("edit4_start"),
+        edit4_end: getValue("edit4_end"),
+
+        machine_rows: collectMachineRows(),
+
+        received_qty: getValue("received_qty"),
+        received_date: getValue("received_date"),
+        received_time: getValue("received_time"),
+
+        finishing_rows: collectFinishingRows(),
+
+        polybag_size: getValue("polybag_size"),
+        polybag_qty: getValue("polybag_qty"),
+        send_qty: getValue("send_qty")
+      };
+
+      const formData = new FormData();
+      formData.append("payload", JSON.stringify(payload));
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      })
+        .then(() => {
+          messageBox.innerText = "Record Uploaded Successfully";
+          messageBox.classList.add("success");
+          messageBox.style.display = "block";
+
+          form.reset();
+          resetMachineRows();
+          resetFinishingRows();
+        })
+        .catch(error => {
+          messageBox.innerText = "Error: " + error;
+          messageBox.classList.add("error");
+          messageBox.style.display = "block";
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Save Record";
         });
-      }
     });
 
-    return data;
-  }
+    function resetMachineRows() {
+      const wrapper = document.getElementById("machineRows");
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Saving...";
-
-    messageBox.style.display = "none";
-    messageBox.className = "msg";
-
-    const payload = {
-      order_number: getValue("order_number"),
-      date: getValue("date"),
-      emp_id: getValue("emp_id"),
-      emp_name: getValue("emp_name"),
-      machine_no: getValue("machine_no"),
-      supervisor_name: getValue("supervisor_name"),
-
-      store_in_time: getValue("store_in_time"),
-      store_out_time: getValue("store_out_time"),
-
-      machine_setup_start: getValue("machine_setup_start"),
-      machine_setup_end: getValue("machine_setup_end"),
-
-      edit1_start: getValue("edit1_start"),
-      edit1_end: getValue("edit1_end"),
-      edit2_start: getValue("edit2_start"),
-      edit2_end: getValue("edit2_end"),
-      edit3_start: getValue("edit3_start"),
-      edit3_end: getValue("edit3_end"),
-      edit4_start: getValue("edit4_start"),
-      edit4_end: getValue("edit4_end"),
-
-      machine_rows: collectMachineRows(),
-
-      received_qty: getValue("received_qty"),
-      received_date: getValue("received_date"),
-      received_time: getValue("received_time"),
-
-      finishing_rows: collectFinishingRows(),
-
-      polybag_size: getValue("polybag_size"),
-      polybag_qty: getValue("polybag_qty"),
-      send_qty: getValue("send_qty")
-    };
-
-    const formData = new FormData();
-    formData.append("payload", JSON.stringify(payload));
-
-    fetch(SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: formData
-    })
-    .then(() => {
-      messageBox.innerText = "Record Uploaded Successfully";
-      messageBox.classList.add("success");
-      messageBox.style.display = "block";
-
-      form.reset();
-      resetMachineRows();
-      resetFinishingRows();
-    })
-    .catch(error => {
-      messageBox.innerText = "Error: " + error;
-      messageBox.classList.add("error");
-      messageBox.style.display = "block";
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Save Record";
-    });
-  });
-
-  function resetMachineRows() {
-    const wrapper = document.getElementById("machineRows");
-
-    wrapper.innerHTML = `
+      wrapper.innerHTML = `
       <div class="machine-row">
         <div class="form-group">
           <label>Shift</label>
@@ -981,12 +989,12 @@
         </div>
       </div>
     `;
-  }
+    }
 
-  function resetFinishingRows() {
-    const wrapper = document.getElementById("finishingRows");
+    function resetFinishingRows() {
+      const wrapper = document.getElementById("finishingRows");
 
-    wrapper.innerHTML = `
+      wrapper.innerHTML = `
       <div class="finish-row">
         <div class="form-group">
           <label>Finish Emp ID</label>
@@ -996,17 +1004,18 @@
         <div class="form-group">
           <label>Stage Name</label>
           <select class="stage_name">
-            <option value="">Select Stage</option>
             <option value="Sheet Cutting">Sheet Cutting</option>
-            <option value="See On Cutting">See On Cutting</option>
-            <option value="Iron On">Iron On</option>
-            <option value="Elfy">Elfy</option>
-            <option value="Merrow">Merrow</option>
-            <option value="Iron Cutting">Iron Cutting</option>
-            <option value="Velcro">Velcro</option>
-            <option value="QC">QC</option>
-            <option value="Patch Finish">Patch Finish</option>
-            <option value="Packing">Packing</option>
+                  <option value="Iron On">Iron On</option>
+                  <option value="Iron On">Iron On Backing</option>
+                  <option value="Iron On">Velcro Cutting</option>
+                  <option value="See On Cutting">See On Cutting</option>
+                  <option value="Iron Cutting">Iron Cutting</option>
+                  <option value="Velcro">Velcro</option>
+                  <option value="Merrow">Merrow</option>
+                  <option value="Elfy">Elfy</option>
+                  <option value="Patch Finish">QC Finishing</option>
+                  <option value="Packing">Packing</option>
+                  <option value="QC">QC Final</option>
           </select>
         </div>
 
@@ -1035,8 +1044,9 @@
         </div>
       </div>
     `;
-  }
-</script>
+    }
+  </script>
 
 </body>
+
 </html>
